@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Voting System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>2024 India General Election</h1>
+
+  <div class="tab-buttons">
+    <button onclick="showVotePage()">Vote</button>
+    <button onclick="showResultsPage()">Results</button>
+  </div>
+
+  <!-- Vote Page -->
+  <div id="vote-page">
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Candidate Name</th>
+            <th>Party</th>
+            <th>Age</th>
+            <th>Symbol</th>
+            <th>Vote</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Narendra Damodardas Modi</td>
+            <td>Bharatiya Janata Party (BJP)</td>
+            <td>74</td>
+            <td><img src="assets/symbols/modi.png" alt="Narendra Modi" width="40"></td>
+            <td><button onclick="castVote('Narendra Damodardas Modi')">Vote</button></td>
+          </tr>
+          <tr>
+            <td>Rahul Gandhi</td>
+            <td>Indian National Congress (INC)</td>
+            <td>54</td>
+            <td><img src="assets/symbols/rahul.png" alt="Rahul Gandhi" width="40"></td>
+            <td><button onclick="castVote('Rahul Gandhi')">Vote</button></td>
+          </tr>
+          <tr>
+            <td>HD Deve Gowda</td>
+            <td>Janata Dal (JDS)</td>
+            <td>50</td>
+            <td><img src="assets/symbols/deve.png" alt="HD Deve Gowda" width="40"></td>
+            <td><button onclick="castVote('HD Deve Gowda')">Vote</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Results Page -->
+  <div id="results-page" class="hidden">
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Candidate Name</th>
+            <th>Votes</th>
+          </tr>
+        </thead>
+        <tbody id="results-list"></tbody>
+      </table>
+    </div>
+    <div id="winner"></div>
+    <button id="finalize-btn" onclick="finalizeResults()">Finalize Results</button>
+    <button id="reset-btn" onclick="resetElection()">Reset Election</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
